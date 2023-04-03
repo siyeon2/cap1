@@ -33,13 +33,17 @@ import os
 import platform
 import sys
 from pathlib import Path
-# arduino
+
+#######################################################################################################
+# arduino serial moniter
 import serial
 com = serial.Serial(port = "/dev/ttyACM1",
 		baudrate = 9600,
 		bytesize = serial.EIGHTBITS,
 		parity = serial.PARITY_NONE,
 		timeout = 1)
+#######################################################################################################
+
 
 import torch
 
@@ -184,12 +188,14 @@ def run(
                         annotator.box_label(xyxy, label, color=colors(c, True))
                     if save_crop:
                         save_one_box(xyxy, imc, file=save_dir / 'crops' / names[c] / f'{p.stem}.jpg', BGR=True)
-                        
+                
+		#######################################################################################################
+		# only helmet detect!!
                     if names[int(cls)]== 'helmet':
                         value=1
                         com.write(bytes(str(value),'utf-8'))
                         print(f"sent value {value} to arduino")
-                
+                #######################################################################################################
 
             # Stream results
             im0 = annotator.result()
