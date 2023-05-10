@@ -45,7 +45,8 @@ speed problem : imgsz=(640, 640) -> imgsz=(160, 160) & default=[160]
 
 >_4월 / ?_
 </br>
-Raspberry pi and Arduino Uart Communication
+
+# Raspberry pi and Arduino Uart Communication
 
 Recognize specific objects('helmet')
 
@@ -57,11 +58,32 @@ helmet : Serial Moniter = 49
 
 >_5월 / 03_
 </br>
-# Update Arduino Code
 
+# Update Arduino Code
 
 PIR * 4
 
 Moter
 
 Switch
+
+***
+
+>_5월 / 08_
+</br>
+
+# Arduino Error
+
+Error : avrdude: ser_open can t open device com3
+
+-> Change to new Arduino : com5
+
+</br>
+
+# PIR sensor * 4 
+
+-> Sensing distance adjustment complete
+
+
+***
+
